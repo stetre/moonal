@@ -1,0 +1,26 @@
+
+[[buffer]]
+=== buffer
+
+[[create_buffer]]
+* _buffer_ = *create_buffer*(<<context, _context_>>) +
+[small]#Rfr: alGenBuffers.#
+
+
+[[delete_buffer]]
+* *delete_buffer*(_buffer_) +
+[small]#Also available as _buffer:delete( )_ method. +
+Rfr: alDeleteBuffers.#
+
+[[buffer_data]]
+* *buffer_data*(_buffer_, <<format, _format_>>, _data_, _freq_) +
+[small]#_data_: binary string, +
+Also available as _buffer:data( )_ method. +
+Rfr: alBufferData.#
+
+[[buffer_get]]
+* _val_, _..._ = *buffer_get*(_buffer_, <<buffer_param, _param_>>) +
+*buffer_set*(_buffer_, <<buffer_param, _param_>>, _val_, _..._) +
+[small]#Also available as _buffer:get/set( )_ methods. +
+Rfr: alGetBuffer, alBuffer.#
+

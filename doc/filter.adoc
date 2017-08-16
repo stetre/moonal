@@ -1,0 +1,27 @@
+
+[[filter]]
+=== filter (EFX)
+
+Use of _filter_ objects requires the https://github.com/openalext/openalext/wiki/ALC_EXT_EFX[ALC_EXT_EFX] extension.
+
+[[create_filter]]
+* _filter_ = *create_filter*(<<context, _context_>>) +
+[small]#Rfr: alGenFilters.#
+
+[[delete_filter]]
+* *delete_filter*(_filter_) +
+[small]#Also available as _filter:delete( )_ method. +
+Rfr: alDeleteFilters.#
+
+[[get_filter_type]]
+* <<filtertype, _filtertype_>> = *get_filter_type*(_filter_) +
+*set_filter_type*(_filter_, <<filtertype, _filtertype_>>) +
+[small]#Also available as _filter:get_type/set_type( )_ methods. +
+Rfr: alGetFilter, alFilter.#
+
+[[filter_get]]
+* _val_, _..._ = *filter_get*(_filter_, <<filter_param, _param_>>) +
+*filter_set*(_filter_, <<filter_param, _param_>>, _val_, _..._) +
+[small]#Also available as _filter:get/set( )_ methods. +
+Rfr: alGetFilter, alFilter.#
+

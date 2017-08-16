@@ -1,0 +1,19 @@
+
+[[listener]]
+=== listener
+
+In OpenAL there is a single listener per context.
+
+The listener is automatically created (and deleted) with the context itself, and an handle to it 
+(i.e. a _listener_ object) can be retrieved with the <<context_listener, context_listener>>(&nbsp;)
+function, or with the equivalent _context:listener(&nbsp;)_ method.
+
+The only use for the _listener_ object is to set or get the listener parameters with the following functions or the equivalent methods:
+
+[[listener_get]]
+[[listener_set]]
+* _val_, _..._ = *listener_get*(_listener_, <<listener_param, _param_>>) +
+*listener_set*(_listener_, <<listener_param, _param_>>, _values_, _val_, _..._) +
+[small]#Also available as _listener:get/set( )_ methods. +
+Rfr: alGetListener, alListener.#
+

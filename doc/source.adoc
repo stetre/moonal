@@ -1,0 +1,35 @@
+
+[[source]]
+=== source
+
+[[create_source]]
+* _source_ = *create_source*(<<context, _context_>>) +
+[small]#Rfr: alGenSources.#
+
+[[delete_source]]
+* *delete_source*(_source_) +
+[small]#Also available as _source:delete( )_ method. +
+Rfr: alDeleteSources.#
+
+[[source_play]]
+* *source_play*(_source_ | {source}) +
+*source_stop*(_source_ | {source}) +
+*source_pause*(_source_ | {source}) +
+*source_rewind*(_source_ | {source}) +
+[small]#All these functions accept either a single _source_ or a list of sources (from the same context). +
+Also available as _source:play/stop/pause/rewind( )_ methods. +
+Rfr: alSourcePlay, alSourceStop, alSourcePause, alSourceRewind.#
+
+[[source_queue_buffers]]
+* *source_queue_buffers*(_source_, {<<buffer, _buffer_>>}) +
+{<<buffer, _buffer_>>} = *source_unqueue_buffers*(_source_, _count_) +
+[small]#_source_unqueue_buffers( )_ returns _nil_ if the requested number of buffers cannot be unqueued. +
+Also available as _source:queue_buffers/unqueue_buffers( )_ methods. +
+Rfr: alSourceQueueBuffers, alSourceUnqueueBuffers.#
+
+[[source_get]]
+* _val_, _..._ = *source_get*(_source_, <<source_param, _param_>>) +
+*source_set*(_source_, <<source_param, _param_>>, _val_, _..._) +
+[small]#Also available as _source:get/set( )_ methods. +
+Rfr: alGetSource, alSource.#
+

@@ -1,0 +1,19 @@
+
+[[versions]]
+=== Version handling
+
+The *al* table contains the following version related information:
+
+* al.*_VERSION*: MoonAL version (a string).
+
+The following functions can be used to retrieve the version and other information about of the OpenAL runtime (_libopenal.so_):
+
+[[get_version]]
+* _string_ = *get_version*( ) +
+_string_ = *get_alc_version*( ) +
+_string_ = *get_efx_version*( ) +
+_string_ = *get_vendor*( ) +
+_string_ = *get_renderer*( ) +
+[small]#Rfr: AL_VERSION, ALC_MAJOR/MINOR_VERSION, ALC_EFX_MAJOR/MINOR_VERSION, AL_VENDOR, AL_RENDERER.#
+
+

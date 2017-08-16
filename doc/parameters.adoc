@@ -1,0 +1,307 @@
+
+[[parameters]]
+== Parameters
+
+[[attributes]]
+[small]#*attributes* = { +
+_sync_: boolean, +
+_output_limiter_: boolean, +
+_frequency_: integer, +
+_refresh_: integer, +
+_mono_sources_: integer, +
+_stereo_sources_: integer, +
+pass:[--] https://github.com/openalext/openalext/wiki/ALC_EXT_EFX[ALC_EXT_EFX] extension: +
+_max_auxiliary_sends_: integer, +
+pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF[ALC_SOFT_HRTF] extension: +
+_hrtf_: boolean, +
+_hrtf_id_: integer (see <<hrtf_specifiers, hrtf_specifiers>>), +
+pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback[ALC_SOFT_loopback] extension: +
+_format_type_: <<type, type>>, +
+_format_channels_: <<channels, channels>>, +
+} (Rfr: ALC_ALL_ATTRIBUTES)#
+
+[[attribute]]
+[small]#*attribute*: +
+'_sync_': boolean +
+'_output limiter_': boolean +
+'_frequency_': integer +
+'_refresh_': integer +
+'_mono sources_': integer +
+'_stereo sources_': integer +
+pass:[--] https://github.com/openalext/openalext/wiki/ALC_EXT_EFX[ALC_EXT_EFX] extension: +
+'_max auxiliary sends_': integer +
+pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF[ALC_SOFT_HRTF] extension: +
+'_hrtf_': boolean +
+'_hrtf id_': integer  (see <<hrtf_specifiers, hrtf_specifiers>>) +
+'_hrtf specifier_': string or _nil_ +
+'_hrtf status': <<hrtfstatus, hrtfstatus>> +
+pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback[ALC_SOFT_loopback] extension: +
+'_format type_': <<type, type>> +
+'_format channels_': <<channels, channels>>#
+
+'''
+
+[[context_param]]
+[small]#*context parameters*: +
+'_doppler factor_': float +
+'_doppler velocity_': float +
+'_speed of sound_': float +
+'_distance model_': <<distancemodel, distancemodel>> +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_gain_clamp_ex[AL_SOFT_gain_clamp_ex] extension: +
+'_gain limit_': float (query only) +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_deferred_updates[AL_SOFT_deferred_updates] extension: +
+'_deferred updates_': boolean (query only) +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_resampler[AL_SOFT_source_resampler] extension: +
+'_default resampler_': <<resampler, resampler>> (query only) +
+'_resampler names_': {<<resampler, resampler>>} (query only)#
+
+'''
+
+[[listener_param]]
+[small]#*listener parameters*: +
+'_meters per unit_': float +
+'_gain_': float +
+'_position_': float3 +
+'_velocity_': float3 +
+'_orientation_': float3, float3 (at, up).#
+
+'''
+
+[[source_param]]
+[small]#*source parameters*: +
+'_relative_': boolean +
+'_cone inner angle_': float +
+'_cone outer angle_': float + 
+'_pitch_': float +
+'_position_': <<float3, float3>> +
+'_direction_': <<float3, float3>> +
+'_velocity_': <<float3, float3>> +
+'_looping_': boolean +
+'_buffer_': <<buffer, buffer>> +
+'_gain_': float + 
+'_min gain_': float +
+'_max gain_': float +
+'_orientation_': <<float3, float3>>, <<float3, float3>> (at, up) +
+'_state_': <<sourcestate, sourcestate>> (query only) +
+'_buffers queued_': integer (query only) +
+'_buffers processed_': integer (query only) +
+'_reference distance_': float +
+'_rolloff factor_': float +
+'_cone outer gain_': float +
+'_max distance_': float +
+'_sec offset_': float +
+'_sample offset_': float +
+'_byte offset_': float +
+'_type_': <<sourcetype, sourcetype>> (query only) +
+'_doppler factor_': float +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_EXT_STEREO_ANGLES[AL_EXT_STEREO_ANGLES] extension: +
+'_stereo angles_', float, float +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_EXT_source_distance_model[AL_EXT_source_distance_model] extension: +
+'_distance model_': <<distancemodel, distancemodel>> +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_EXT_SOURCE_RADIUS[AL_EXT_SOURCE_RADIUS] extension: +
+'_radius_': float +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_direct_channels[AL_SOFT_direct_channels] extension: +
+'_direct channels_': boolean +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_resampler[AL_SOFT_source_resampler] extension: +
+'_resampler_': <<resampler, resampler>> +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_spatialize[AL_SOFT_source_spatialize] extension: +
+'_spatialize_': <<spatializemode, spatializemode>> +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_length[AL_SOFT_source_length] extension: +
+'_byte length_': integer (query only) +
+'_sample length_': integer (query only)  +
+'_sec length_': float (query only) +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_latency[AL_SOFT_source_latency] extension: +
+'_sec offset latency_': double, double (query only) +
+'_sample offset latency_': integer, integer (query only) +
+pass:[--] https://github.com/openalext/openalext/wiki/ALC_EXT_EFX[ALC_EXT_EFX] extension: +
+'_direct filter_': <<directfilter, directfilter>> +
+'_auxiliary send filter_': <<auxslot, auxslot>>, integer, <<filter, filter>> +
+'_air absorption factor_': float +
+'_room rolloff factor_': float +
+'_cone outer gainhf_': float +
+'_direct filter gainhf auto_': boolean +
+'_auxiliary send filter gain auto_': boolean +
+'_auxiliary send filter gainhf auto_': boolean#
+
+'''
+
+[[buffer_param]]
+[small]#*buffer parameters*: +
+'_frequency_': integer (query only) +
+'_bits_': integer (query only) +
+'_channels_': integer (query only) +
+'_size_': integer (query only) +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_block_alignment[AL_SOFT_block_alignment] extension: +
+'_unpack block alignment_': integer +
+'_pack block alignment_': integer +
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_loop_points[AL_SOFT_loop_points] extension: +
+'_loop points_': integer, integer#
+
+////
+pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_buffer_samples[AL_SOFT_buffer_samples] extension: +
+'_internal format_': <<internalformat, internalformat>> (query only) +
+'_byte length_': integer (query only) +
+'_sample length_': integer (query only) +
+'_sec length_': float (query only)
+////
+
+'''
+
+[[effect_param]]
+[small]#*effect parameters* depend on the <<effecttype, _effecttype_>>: +
+<<reverb_param, reverb>> -
+<<chorus_param, chorus>> -
+<<distortion_param, distortion>> -
+<<echo_param, echo>> -
+<<flanger_param, flanger>> -
+<<ring_modulator_param, ring modulator>> -
+<<compressor_param, compressor>> -
+<<equalizer_param, equalizer>> -
+<<eaxreverb_param, eaxreverb>> -
+<<dedicated_param, dedicated>>#
+
+[[reverb_param]]
+[small]#*reverb effect parameters*: (rfr: AL_REVERB_XXX) +
+'_density_': float +
+'_diffusion_': float +
+'_gain_': float +
+'_gainhf_': float +
+'_decay time_': float +
+'_decay hfratio_': float +
+'_reflections gain_': float +
+'_reflections delay_': float +
+'_late reverb gain_': float +
+'_late reverb delay_': float +
+'_air absorption gainhf_': float +
+'_room rolloff factor_': float +
+'_decay hflimit_': integer#
+
+[[chorus_param]]
+[small]#*chorus effect parameters*: (rfr: AL_CHORUS_XXX) +
+'_waveform_': <<choruswaveform, choruswaveform>> +
+'_rate_': float +
+'_depth_': float +
+'_feedback_': float +
+'_delay_': float +
+'_phase_': integer#
+
+[[distortion_param]]
+[small]#*distortion effect parameters*: (rfr: AL_DISTORTION_XXX) +
+'_edge_': float +
+'_gain_': float +
+'_lowpass cutoff_': float +
+'_eqcenter_': float +
+'_eqbandwidth_': float#
+
+[[echo_param]]
+[small]#*echo effect parameters*: (rfr: AL_ECHO_XXX) +
+'_delay_': float +
+'_lrdelay_': float +
+'_damping_': float +
+'_feedback_': float +
+'_spread_': float#
+
+[[flanger_param]]
+[small]#*flanger effect parameters*: (rfr: AL_FLANGER_XXX) +
+'_waveform_': <<flangerwaveform, flangerwaveform>> +
+'_rate_': float +
+'_depth_': float +
+'_feedback_': float +
+'_delay_': float +
+'_phase_': integer#
+
+[[ring_modulator_param]]
+[small]#*ring modulator effect parameters*: (rfr: AL_RING_MODULATOR_XXX) +
+'_waveform_': <<ringmodulatorwaveform, ringmodulatorwaveform>> +
+'_frequency_': float +
+'_highpass cutoff_': float#
+
+[[compressor_param]]
+[small]#*compressor effect parameters*: (rfr: AL_COMPRESSOR_XXX) +
+'_onoff_': <<compressoronoff, compressoronoff>>#
+
+[[equalizer_param]]
+[small]#*equalizer effect parameters*: (rfr: AL_EQUALIZER_XXX) +
+'_low gain_': float +
+'_low cutoff_': float +
+'_mid1 gain_': float +
+'_mid1 center_': float +
+'_mid1 width_': float +
+'_mid2 gain_': float +
+'_mid2 center_': float +
+'_mid2 width_': float +
+'_high gain_': float +
+'_high cutoff_': float#
+
+[[eaxreverb_param]]
+[small]#*eaxreverb effect parameters*: (rfr: AL_EAXREVERB_XXX) +
+'_density_': float +
+'_diffusion_': float +
+'_gain_': float +
+'_gainhf_': float +
+'_gainlf_': float +
+'_decay time_': float +
+'_decay hfratio_': float +
+'_decay lfratio_': float +
+'_decay hflimit_': float +
+'_reflections gain_': float +
+'_reflections delay_': float +
+'_late reverb gain_': float +
+'_late reverbdelay_': float +
+'_air absorption gainhf_': float +
+'_echo time_': float +
+'_echo depth_': float +
+'_modulation time_': float +
+'_modulation depth_': float +
+'_hfreference_': float +
+'_lfreference_': float +
+'_room rolloff factor_': float +
+'_late reverb pan_': float +
+'_reflections pan_': <<float3, float3>>#
+
+////
+[[dedicated_param]]
+[small]#* dedicated effects parameters*: +
+@@TODO#
+
+////
+
+
+'''
+
+[[filter_param]]
+[small]#*filter parameters* depend on the <<filtertype, _filtertype_>>: +
+<<lowpass_param, lowpass>> -
+<<highpass_param, highpass>> -
+<<bandpass_param, bandpass>>#
+
+
+[[lowpass_param]]
+[small]#*lowpass filter parameters*: (rfr: AL_LOWPASS_XXX) +
+'_gain_': float +
+'_gainhf_': float#
+
+[[highpass_param]]
+[small]#*highpass filter parameters*: (rfr: AL_HIGHPASS_XXX) +
+'_gain_': float +
+'_gainlf_': float#
+
+[[bandpass_param]]
+[small]#*bandpass filter parameters*: (rfr: AL_BANDPASS_XXX) +
+'_gain_': float +
+'_gainlf_': float +
+'_gainhf_': float#
+
+'''
+
+[[auxslot_param]]
+[small]#*auxslot parameters*: (rfr: AL_EFFECTSLOT_XXX) +
+'_gain_': float +
+'_auxiliary_send_auto_': boolean +
+'_effect_': <<effect, effect>>#
+
+
+////
+pass:[--] https://github.com/openalext/openalext/wiki/[] extension: +
+////
+

@@ -1,0 +1,21 @@
+
+[[auxslot]]
+=== auxslot (EFX)
+
+Use of _auxslot_ objects requires the https://github.com/openalext/openalext/wiki/ALC_EXT_EFX[ALC_EXT_EFX] extension.
+
+[[create_auxslot]]
+* _auxslot_ = *create_auxslot*(<<context, _context_>>) +
+[small]#Rfr: alGenAuxiliaryEffectSlots.#
+
+[[delete_auxslot]]
+* *delete_auxslot*(_auxslot_) +
+[small]#Also available as _auxslot:delete( )_ method. +
+Rfr: alDeleteAuxiliaryEffectSlots.#
+
+[[auxslot_get]]
+* _val_, _..._ = *auxslot_get*(_auxslot_, <<auxslot_param, _param_>>) +
+*auxslot_set*(_auxslot_, <<auxslot_param, _param_>>, _val_, _..._) +
+[small]#Also available as _auxslot:get/set( )_ methods. +
+Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.#
+

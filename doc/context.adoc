@@ -1,0 +1,82 @@
+
+[[context]]
+=== context
+
+A _context_ object in MoonAL corresponds to a OpenAL context, which is basically a
+container for objects and state needed to render audio on a <<device, device>>.
+
+(A _context_ is bound to one and only one _device_, but more than one contexts
+may be bound to the same device.)
+
+Note that, in MoonAL, the concept of 'current context' is almost (if not completely)
+removed from the API, and one has to explicitly indicate the _context_ the API calls
+refer to, whereas in OpenAL most API calls implicitly refer to the current context.
+
+[[create_context]]
+* _context_ = *create_context*(<<device, _device_>>, [<<attributes, _attributes_>>]) +
+[small]#Creates a _context_ bound to the given _device_. +
+The optional _attributes_ table can be passed to specify some of all of the context 
+attributes (see the OpenAL documentation for more details). +
+Rfr: alcCreateContext.#
+
+[[delete_context]]
+* *delete_context*(_context_) +
+[small]#Also available as _context:delete( )_ method. +
+Rfr: alcDestroyContext.#
+
+[[reset_context]]
+* _boolean_ = *reset_context*(_context_, [<<attributes, _attributes_>>]) +
+[small]#Also available as _context:reset( )_ method. +
+Rfr: alcResetDeviceSOFT (https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF[ALC_SOFT_HRTF] extension)#
+
+////
+[[current_context]]
+* *current_context*(_context_) +
+_context_ = *current_context*( ) +
+[small]#Set/get the current context. +
+Rfr: alcMakeContextCurrent, alcGetCurrentContext.#
+
+NOTE: All functions that do not explicitly expect a <<context, _context_>> (or <<device, _device_>>) argument, implicitly refer to the *current context* (or its device). 
+In particular, objects created with the *al.create_xxx*(&nbsp;) functions are created as children of the current context, and are automatically deleted when the context is.
+////
+
+[[process_context]]
+* *process_context*(_context_) +
+*suspend_context*(_context_) +
+[small]#Also available as _context:process/suspend( )_ methods. +
+Rfr: alcProcessContext, alcSuspendContext.#
+
+[[context_device]]
+* <<device, _device_>> = *context_device*(_context_) +
+[small]#Also available as _context:device( )_ method. +
+Rfr: alcGetContextsDevice.#
+
+[[context_listener]]
+* <<listener, _listener_>> = *context_listener*(_context_) +
+[small]#Also available as _context:listener( )_ method. +
+Returns the context's unique <<listener, _listener_>> object.#
+
+[[enable]]
+* *enable*(_context_, <<capability, _capability_>>) +
+*disable*(_context_, <<capability, _capability_>>) +
+_boolean_ = *is_enabled*(_context_, <<capability, _capability_>>) +
+[small]#Also available as _context:enable/disable/is_enabled( )_ methods. +
+Rfr: alEnable, alDisable, alIsEnabled.#
+
+[[get_attribute]]
+* _val_, _..._ = *get_attribute*(_context_, <<attribute, _attribute_>>) +
+[small]#Also available as _context:get_attribute( )_ method. +
+Rfr: alcGetInteger, alcGetString, etc.#
+
+[[context_get]]
+* _val_, _..._ = *context_get*(_context_, <<context_param, _param_>>) +
+*context_set*(_context_, <<context_param, _param_>>, _values_, _val_, _..._) +
+[small]#Also available as _context:get/set( )_ methods. +
+Rfr: alGetInteger, alGetFloat, alDopplerFactor, alDopplerVelocity, etc..#
+
+[[defer_updates]]
+* *defer_updates*(_context_) +
+*process_updates*(_context_) +
+[small]#Also available as _context:defer_updates/process_updates( )_ methods. +
+Rfr: alDeferUpdatesSOFT, alProcessUpdatesSOFT (https://github.com/openalext/openalext/wiki/AL_SOFT_deferred_updates[AL_SOFT_deferred_updates] extension)#
+

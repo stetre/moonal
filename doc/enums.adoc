@@ -1,0 +1,107 @@
+
+[[enums]]
+== Enums
+
+OpenAL enums are mapped in MoonAL to sets of string literals (as is customary in Lua).
+Admitted literals are available in the *al* table (e.g. *al.EFFECT_XXX* for AL_EFFECT_XXX),
+and can also be inferred from the corresponding C enum names. For example, given the 
+al.EFFECT_XXX hint for the <<effecttype, effecttype>> enum type, the literals it admits
+are obtained by lowercasing the XXX part of the name and replacing any underscore with a space.
+
+The <<enums_snippet, example>> contained in the code snippets section should hopefully be clear enough.
+
+If needed, the following function can be used to obtain the list of literals admitted by 
+a particular enum type.
+
+[[al.enum]]
+* {_literal_} = *al.enum*(_enumtype_) +
+[small]#Returns a table listing the literals admitted by _enumtype_ (given as a string, e.g.
+'_capability_', '_format_', etc).#
+
+Below is the list of the enum types, each with its hint, the list of string values it
+admits (if not too long), and a reference to the original OpenAL enum type where to look
+for semantic and usage information.
+
+
+[[capability]]
+[small]#*capability*: al.XXX +
+Values: '_source distance model_'.#
+
+[[channels]]
+[small]#*channels*: al.ALC_XXX_SOFT +
+Values: '_mono_', '_stereo_', '_quad_', '_5point1_', '_6point1_', '_7point1_'.#
+// '_bformat3d_'
+
+[[choruswaveform]]
+[small]#*choruswaveform*: al.CHORUS_WAVEFORM_XXX +
+Values: '_sinusoid_', '_triangle_'.#
+
+[[compressoronoff]]
+[small]#*compressoronoff*: al.COMPRESSOR_XXX +
+Values: '_off_', '_on_'.#
+
+[[distancemodel]]
+[small]#*distancemodel*: al.NONE, al.INVERSE_DISTANCE, al.INVERSE_DISTANCE_CLAMPED, etc. +
+Values: '_none_', '_inverse_', '_inverse clamped_', '_linear_', '_linear clamped_', '_exponent_', '_exponent clamped_'.#
+
+[[effecttype]]
+[small]#*effecttype*: al.EFFECT_XXX +
+Values: '_null_', '_reverb_', '_chorus_', '_distortion_', '_echo_', '_flanger_', '_frequency shifter_', '_vocal morpher_', '_pitch shifter_', '_ring modulator_', '_autowah_', '_compressor_', '_equalizer_', '_eaxreverb_', '_dedicated dialogue_', '_dedicated low frequency effect_'.#
+
+[[filtertype]]
+[small]#*filtertype*: al.FILTER_XXX +
+Values: '_null_', '_lowpass_', '_highpass_', '_bandpass_'.#
+
+[[flangerwaveform]]
+[small]#*flangerwaveform*: al.XXX +
+Values: '_sinusoid_', '_triangle_'.#
+
+[[format]]
+[small]#*format*: al.FORMAT_XXX +
+Values: '_quad8 loki_', '_quad16 loki_', '_mono float32_', '_stereo float32_', '_mono double_', '_stereo double_', '_mono mulaw_', '_stereo mulaw_', '_mono alaw_', '_stereo alaw_', '_quad8_', '_quad16_', '_quad32_', '_rear8_', '_rear16_', '_rear32_', '_51chn8_', '_51chn16_', '_51chn32_', '_61chn8_', '_61chn16_', '_61chn32_', '_71chn8_', '_71chn16_', '_71chn32_', '_quad mulaw_', '_rear mulaw_', '_51chn mulaw_', '_61chn mulaw_', '_71chn mulaw_', '_mono ima4_', '_stereo ima4_', '_mono msadpcm_', '_stereo msadpcm_', '_bformat2d 8_', '_bformat2d 16_', '_bformat2d float32_', '_bformat3d 8_', '_bformat3d 16_', '_bformat3d float32_', '_bformat2d mulaw_', '_bformat3d mulaw_', '_mono8_', '_mono16_', '_stereo8_', '_stereo16_'.#
+
+[[hrtfstatus]]
+[small]#*hrtfstatus*: al.ALC_HRTF_XXX_SOFT +
+Values: '_disabled_', '_enabled_', '_denied_', '_required_', '_headphones detected_', '_unsupported format_'.#
+
+////
+[[internalformat]]
+[small]#*internalformat*: al.XXX, al.XXX_SOFT +
+Values: '_mono8_', '_mono16_', '_mono32f_', '_stereo8_', '_stereo16_', '_stereo32f_', '_rear8_', '_rear16_', '_rear32f_', '_quad8 loki_', '_quad16 loki_', '_quad8_', '_quad16_', '_quad32f_', '_5point1 8_', '_5point1 16_', '_5point1 32f_', '_6point1 8_', '_6point1 16_', '_6point1 32f_', '_7point1 8_', '_7point1 16_', '_7point1 32f_', '_bformat2d 8_', '_bformat2d 16_', '_bformat2d 32f_', '_bformat3d 8_', '_bformat3d 16_', '_bformat3d 32f_'.#
+////
+
+[[resampler]]
+[small]#*resampler*: al.XXX_RESAMPLER +
+Values: '_point_', '_linear_', '_fir4_', '_bsinc_'.#
+
+[[ringmodulatorwaveform]]
+[small]#*ringmodulatorwaveform*: al.RING_MODULATOR_XXX +
+Values: '_sinusoid_', '_sawtooth_', '_square_'.#
+
+[[sourcestate]]
+[small]#*sourcestate*: al.XXX +
+Values: '_initial_', '_playing_', '_paused_', '_stopped_'.#
+
+[[sourcetype]]
+[small]#*sourcetype*: al.XXX +
+Values: '_static_', '_streaming_', '_undetermined_'.#
+
+[[spatializemode]]
+[small]#*spatializemode*: al.SPATIALIZE_MODE_XXX +
+Values: '_off_', '_on_', '_auto_'.#
+
+[[type]]
+[small]#*type*: al.TYPE_XXX +
+Values: '_char_', '_uchar_', '_byte_', '_ubyte_', '_short_', '_ushort_', '_int_', '_uint_', '_long_', '_ulong_', '_float_', '_double_'.#
+
+
+////
+5yy
+[[]]
+[small]#**: al._XXX +
+Values: 
+.#
+
+////
+
+

@@ -1,0 +1,15 @@
+
+[[extensions]]
+=== Extensions
+
+//@@ NOTE: functions for the supported extensions are automatically loaded by MoonAL
+
+[[get_extensions]]
+* {_extname_} = *get_extensions*(<<context, _context_>>) +
+[small]#Returns a table with the names (strings) of the available AL and ALC extensions.#
+
+[[is_extension_present]]
+* _boolean_ = *is_extension_present*(<<context, _context_>>, _extname_) +
+[small]#Returns _true_ if the extension named _extname_ (a string) is present, _false_ otherwise. +
+Works both for AL and ALC extensions.#
+

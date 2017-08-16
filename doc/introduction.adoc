@@ -1,0 +1,70 @@
+
+== Introduction
+
+MoonAL is an (almost) one-to-one Lua binding library to the OpenAL API.
+It provide means to implement scripted OpenAL applications using Lua instead
+of C or pass:[C++], with all its pros and cons.
+
+This section gives a brief overview, while the details of the bindings are given 
+in the sections that follow.
+
+As a general rule, OpenAL API *functions* are bound to by MoonAL functions whose names
+are https://en.wikipedia.org/wiki/Snake_case[snake_case] versions of the original ones
+(e.g., _alcOpenDevice_(&nbsp;) is bound to by _al.open_device_(&nbsp;)).
+This rule is loosely followed, though. For example, the OpenGL-style _alGenXxx_(&nbsp;)
+functions that create objects are mapped in MoonAL to _al.CreateXxx_(&nbsp;) functions
+that create a single function.
+
+(Note that both AL and ALC functions bindings are contained in the *al* table).
+
+If not stated otherwise, *on error* all MoonAL functions raise a 
+http://www.lua.org/manual/5.3/manual.html#lua_error[Lua error]. 
+If needed, this behaviour can be overridden by wrapping function calls in the standard Lua 
+http://www.lua.org/manual/5.3/manual.html#pdf-pcall[pcall](&nbsp;).
+
+MoonAL binds OpenAL *objects* (_device_, _context_, etc.) to Lua userdata, which
+are returned by the creating or getter functions 
+(_al.open_device_(&nbsp;), _al.create_context_(&nbsp;), etc) and are then used to 
+refer to objects in Lua in the same way as one would use OpenAL handles in C.
+
+In the rest of this manual we will refer to userdata bound to OpenAL objects as to just 'objects',
+or as 'MoonAL objects' (vs. 'OpenAL objects') when there is need for disambiguation.
+
+////
+Occasionally, the actual OpenAL *handles* may be needed by the Lua code, mainly to interoperate
+in very dangerous ways with other libraries that access the OpenAL API directly. 
+Handles can be retrieved with the <<method_raw, raw>>(&nbsp;) method that every object has.
+////
+
+Objects are *garbage collected at exit* (which includes on error), and automatically
+released at the OpenAL level, so there is no need to explicitly invoke the bindings
+to _alDeleteXxx_(&nbsp;) at exit for cleanup. 
+
+Apart from at exit, however, objects are not automatically garbage collected 
+footnote:[Objects are anchored to the Lua registry at their creation, so even if the script does not
+have references to an object, a reference always exists on the registry and this prevents the 
+GC to collect it.]
+and one must release them explicitly when needed, e.g. to release resources when the
+application is not exiting and some objects are no longer needed.
+
+Releasing an object causes the automatic (pre) destruction of all its children
+objects, and the invalidation of any reference to the object and to its children.
+footnote:[It is good practice to not leave invalid references to objects around, because
+they prevent the GC to collect the memory associated with the userdata.]
+
+OpenAL *structs* used to pass parameters and results across the OpenAL API 
+are mapped in MoonAL to tables, having more or less the same contents as their C counterparts
+but again with https://en.wikipedia.org/wiki/Snake_case[snake_case] named fields, while
+*enumerations* are mapped to/from sets of string literals, while *flags* bitmasks are represented
+as plain integers encoded in the same way as in C.
+
+In addition to the bindings to the OpenAL API, which are described in the sections that follow, 
+MoonAL also provides a few other utilities and object 'methods' that do not correspond
+to OpenAL functions.
+These are described mainly in the <<miscellanea, 'Miscellanea'>> subsections.
+
+////
+@@TODO additional utilities (data handling, etc).
+@@ constructors and other utilities
+////
+

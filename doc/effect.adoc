@@ -1,0 +1,29 @@
+
+[[effect]]
+=== effect (EFX)
+
+Use of _effect_ objects requires the https://github.com/openalext/openalext/wiki/ALC_EXT_EFX[ALC_EXT_EFX] extension.
+
+[[create_effect]]
+* _effect_ = *create_effect*(<<context, _context_>>) +
+[small]#Rfr: alGenEffects.#
+
+[[delete_effect]]
+* *delete_effect*(_effect_) +
+[small]#Also available as _effect:delete( )_ method. +
+Rfr: alDeleteEffects.#
+
+[[get_effect_type]]
+* <<effecttype, _effecttype_>> = *get_effect_type*(_effect_) +
+*set_effect_type*(_effect_, <<effecttype, _effecttype_>>) +
+[small]#Also available as _effect:get_type/set_type( )_ methods. +
+Rfr: alGetEffect, alEffect.#
+
+[[effect_get]]
+* _val_, _..._ = *effect_get*(_effect_, <<effect_param, _param_>>) +
+*effect_set*(_effect_, <<effect_param, _param_>>, _val_, _..._) +
+[small]#Also available as _effect:get/set( )_ methods. +
+Rfr: alGetEffect, alEffect.#
+
+
+

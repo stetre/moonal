@@ -1,0 +1,111 @@
+
+[[device]]
+=== device
+
+A _device_ object is a logical representation of a physical audio device.
+
+There are three kinds of devices - <<_playback_device, playback>>, 
+<<_capture_device, capture>>, and <<_loopback_device, loopback>> -
+and thus three different functions to open a device and create a corresponding
+_device_ object (there is only one close function, though).
+
+To query for the names (or 'specifiers') of the devices available on your system,
+use the following functions: 
+
+[[available_devices]]
+* {_playbackname_}, {_capturename_} = *available_devices*( ) +
+[small]#Lists the names (strings) of all the available playback devices and capture devices.#
+
+[[default_devices]]
+* _playbackname_, _capturename_ = *default_devices*( ) +
+[small]#Returns the names (strings) of the default playback device and of the default capture device. +
+These are the devices that will be opened when calling the open functions without passing them
+the _name_ parameters.#
+
+
+==== Playback device
+
+[[open_device]]
+* _device_ = *open_device*([_name_]) +
+[small]#Opens a playback device, and returns the corresponding _device_ object. +
+The optional _name_ parameter (a string) is the <<available_devices, device specifier>>. +
+If _name_ is _nil_, the <<default_devices, default device>> will be used. +
+Rfr: alcOpenDevice.#
+
+[[close_device]]
+* *close_device*(_device_) +
+[small]#Closes _device_, which may be of any kind (playback, capture, or loopback). +
+Also available as _device:close( )_ method. +
+Rfr: alcCloseDevice, alcCaptureCloseDevice.#
+
+[[device_name]]
+* _name_ = *device_name*(_device_) +
+[small]#Returns the device name (a.k.a. 'specifier', a string). +
+Also available as _device:name( )_ method.#
+
+[[pause]]
+* *device_pause*(_device_) +
+*device_resume*(_device_) +
+[small]#Also available as _device:pause/resume( )_ methods. +
+Rfr: alcDevicePauseSOFT, alcDeviceResumeSOFT (https://github.com/openalext/openalext/wiki/ALC_SOFT_pause_device[ALC_SOFT_pause_device] extension).#
+
+[[hrtf_specifiers]]
+* {_specifier_} = *hrtf_specifiers*(_device_) +
+[small]#Returns the list of of HRTF specifiers (strings) for _device_. +
+Note that the _hrtf_id_ for the _i-th_ specifier in the list is _i - 1_ (0-based index). +
+Rfr: ALC_HRTF_SPECIFIER_SOFT (https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF[ALC_SOFT_HRTF] extension).#
+
+==== Capture device
+
+[[capture_open_device]]
+* _device_ = *capture_open_device*([_name_], _frequency_, <<format, _format_>>, _maxframes_) +
+[small]#Opens a capture device and returns the corresponding _device_ object. +
+The caller must specify the capture _frequency_ in hertz, the format of the frames, and the
+size of the capture buffer in number of frames (_maxframes_). +
+(The buffer size in bytes is _maxframes_ times the size of a frame, that depends on the given _format_). +
+Rfr: alcCaptureOpenDevice.#
+
+* <<close_device, *close_device*>>( )
+
+* <<device_name, *device_name*>>( )
+
+[[capture_start]]
+* *capture_start*(_device_) +
+*capture_stop*(_device_) +
+[small]#Also available as _device:start/stop( )_ methods. +
+Rfr: alcCaptureStart, alcCaptureStop.#
+
+[[capture_samples]]
+* _data_ = *capture_samples*(_device_, _nframes_) +
+[small]#_nframes_: integer (number of frames to capture). +
+Returns the captured _data_ as a binary string, or _nil_ if the requested number 
+of frames is not available. +
+Also available as _device:samples( )_ method. +
+Rfr: alcCaptureSamples.#
+
+==== Loopback device
+
+Loopback devices require the https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback[ALC_SOFT_loopback] extension.
+
+[[loopback_open_device]]
+* _device_ = *loopback_open_device*([_name_], _maxframes_, _maxframesize_) +
+[small]#The _name_ parameter (a string) is the <<available_devices, device specifier>> of
+the playback device to loop back.
+If _name_ is _nil_, the <<default_devices, default playback device>> will be used. +
+_maxframes_ and _maxframesize_ are the maximum values that the application will pass 
+to <<render_samples, render_samples>>(&nbsp;). +
+Rfr: alcLoopbackOpenDeviceSOFT.#
+
+* <<close_device, *close_device*>>( )
+
+[[is_render_format_supported]]
+* _boolean_ = *is_render_format_supported*(_device_, _freq_, <<channels, _channels_>>, <<type, _type_>>) +
+[small]#Also available as _device:is_format_supported( )_ method. +
+Rfr: alcIsRenderFormatSupportedSOFT.#
+
+[[render_samples]]
+* _data_ = *render_samples*(_device_, _frames_, _framesize_) +
+[small]#Returns _frames_ * _framesize_ bytes of data, as a binary string. +
+Also available as _device:render( )_ method. +
+Rfr: alcRenderSamplesSOFT.#
+
