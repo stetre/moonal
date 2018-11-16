@@ -29,14 +29,6 @@ ifeq ($(D),1)
 DEBUG=1
 endif
 
-ifdef LINUX
-#LIBS = -lopenal
-endif
-ifdef MINGW
-#LIBS = -lopenal
-LIBS = -llua
-endif
-
 Tgt	:= moonal
 Src := $(wildcard *.c)
 Objs := $(Src:.c=.o)
@@ -51,9 +43,13 @@ COPT 	+= -DLUAVER=$(LUAVER)
 ifdef LINUX
 COPT    += -fpic
 COPT	+= -DLINUX
+INCDIR = -I/usr/include/lua$(LUAVER)
+#LIBS = -lopenal
 endif
 ifdef MINGW
 COPT	+= -DMINGW
+#LIBS = -lopenal
+LIBS = -llua
 endif
 ifdef DEBUG
 COPT	+= -DDEBUG
