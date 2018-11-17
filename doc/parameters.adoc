@@ -34,7 +34,7 @@ pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF[ALC_SOFT_HRT
 '_hrtf_': boolean +
 '_hrtf id_': integer  (see <<hrtf_specifiers, hrtf_specifiers>>) +
 '_hrtf specifier_': string or _nil_ +
-'_hrtf status': <<hrtfstatus, hrtfstatus>> +
+'_hrtf status_': <<hrtfstatus, hrtfstatus>> +
 pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback[ALC_SOFT_loopback] extension: +
 '_format type_': <<type, type>> +
 '_format channels_': <<channels, channels>>#
@@ -61,9 +61,9 @@ pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_resampler[A
 [small]#*listener parameters*: +
 '_meters per unit_': float +
 '_gain_': float +
-'_position_': float3 +
-'_velocity_': float3 +
-'_orientation_': float3, float3 (at, up).#
+'_position_': {float}[3] +
+'_velocity_': {float}[3] +
+'_orientation_': {float}[3], {float}[3] (at, up).#
 
 '''
 
@@ -73,15 +73,15 @@ pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_resampler[A
 '_cone inner angle_': float +
 '_cone outer angle_': float + 
 '_pitch_': float +
-'_position_': <<float3, float3>> +
-'_direction_': <<float3, float3>> +
-'_velocity_': <<float3, float3>> +
+'_position_': {float}[3] +
+'_direction_': {float}[3] +
+'_velocity_': {float}[3] +
 '_looping_': boolean +
 '_buffer_': <<buffer, buffer>> +
 '_gain_': float + 
 '_min gain_': float +
 '_max gain_': float +
-'_orientation_': <<float3, float3>>, <<float3, float3>> (at, up) +
+'_orientation_': {float}[3], {float}[3] (at, up) +
 '_state_': <<sourcestate, sourcestate>> (query only) +
 '_buffers queued_': integer (query only) +
 '_buffers processed_': integer (query only) +
@@ -257,7 +257,7 @@ pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_buffer_samples[AL_
 '_lfreference_': float +
 '_room rolloff factor_': float +
 '_late reverb pan_': float +
-'_reflections pan_': <<float3, float3>>#
+'_reflections pan_': {float}[3]#
 
 ////
 [[dedicated_param]]

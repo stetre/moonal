@@ -1550,9 +1550,9 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 '<em>hrtf</em>': boolean<br>
 '<em>hrtf id</em>': integer  (see <a href="#hrtf_specifiers">hrtf_specifiers</a>)<br>
 '<em>hrtf specifier</em>': string or <em>nil</em><br>
-'<em>hrtf status': <a href="#hrtfstatus">hrtfstatus</a><br>
+'<em>hrtf status</em>': <a href="#hrtfstatus">hrtfstatus</a><br>
 -- <a href="https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback">ALC_SOFT_loopback</a> extension:<br>
-'_format type</em>': <a href="#type">type</a><br>
+'<em>format type</em>': <a href="#type">type</a><br>
 '<em>format channels</em>': <a href="#channels">channels</a></span></p>
 </div>
 <hr>
@@ -1575,9 +1575,9 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 <p><span class="small"><strong>listener parameters</strong>:<br>
 '<em>meters per unit</em>': float<br>
 '<em>gain</em>': float<br>
-'<em>position</em>': float3<br>
-'<em>velocity</em>': float3<br>
-'<em>orientation</em>': float3, float3 (at, up).</span></p>
+'<em>position</em>': {float}[3]<br>
+'<em>velocity</em>': {float}[3]<br>
+'<em>orientation</em>': {float}[3], {float}[3] (at, up).</span></p>
 </div>
 <hr>
 <div id="source_param" class="paragraph">
@@ -1586,15 +1586,15 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 '<em>cone inner angle</em>': float<br>
 '<em>cone outer angle</em>': float<br>
 '<em>pitch</em>': float<br>
-'<em>position</em>': <a href="#float3">float3</a><br>
-'<em>direction</em>': <a href="#float3">float3</a><br>
-'<em>velocity</em>': <a href="#float3">float3</a><br>
+'<em>position</em>': {float}[3]<br>
+'<em>direction</em>': {float}[3]<br>
+'<em>velocity</em>': {float}[3]<br>
 '<em>looping</em>': boolean<br>
 '<em>buffer</em>': <a href="#buffer">buffer</a><br>
 '<em>gain</em>': float<br>
 '<em>min gain</em>': float<br>
 '<em>max gain</em>': float<br>
-'<em>orientation</em>': <a href="#float3">float3</a>, <a href="#float3">float3</a> (at, up)<br>
+'<em>orientation</em>': {float}[3], {float}[3] (at, up)<br>
 '<em>state</em>': <a href="#sourcestate">sourcestate</a> (query only)<br>
 '<em>buffers queued</em>': integer (query only)<br>
 '<em>buffers processed</em>': integer (query only)<br>
@@ -1760,7 +1760,7 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 '<em>lfreference</em>': float<br>
 '<em>room rolloff factor</em>': float<br>
 '<em>late reverb pan</em>': float<br>
-'<em>reflections pan</em>': <a href="#float3">float3</a></span></p>
+'<em>reflections pan</em>': {float}[3]</span></p>
 </div>
 <hr>
 <div id="filter_param" class="paragraph">
