@@ -12,10 +12,10 @@ _mono_sources_: integer, +
 _stereo_sources_: integer, +
 pass:[--] https://github.com/openalext/openalext/wiki/ALC_EXT_EFX[ALC_EXT_EFX] extension: +
 _max_auxiliary_sends_: integer, +
-pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF[ALC_SOFT_HRTF] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_HRTF.txt[ALC_SOFT_HRTF] extension: +
 _hrtf_: boolean, +
 _hrtf_id_: integer (see <<hrtf_specifiers, hrtf_specifiers>>), +
-pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback[ALC_SOFT_loopback] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_loopback.txt[ALC_SOFT_loopback] extension: +
 _format_type_: <<type, type>>, +
 _format_channels_: <<channels, channels>>, +
 } (Rfr: ALC_ALL_ATTRIBUTES)#
@@ -30,12 +30,12 @@ _format_channels_: <<channels, channels>>, +
 '_stereo sources_': integer +
 pass:[--] https://github.com/openalext/openalext/wiki/ALC_EXT_EFX[ALC_EXT_EFX] extension: +
 '_max auxiliary sends_': integer +
-pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF[ALC_SOFT_HRTF] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_HRTF.txt[ALC_SOFT_HRTF] extension: +
 '_hrtf_': boolean +
 '_hrtf id_': integer  (see <<hrtf_specifiers, hrtf_specifiers>>) +
 '_hrtf specifier_': string or _nil_ +
 '_hrtf status_': <<hrtfstatus, hrtfstatus>> +
-pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback[ALC_SOFT_loopback] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_loopback.txt[ALC_SOFT_loopback] extension: +
 '_format type_': <<type, type>> +
 '_format channels_': <<channels, channels>> +
 pass:[--] http://openal-soft.org/openal-extensions/SOFT_device_clock.txt[ALC_SOFT_device_clock] extension: +
@@ -51,11 +51,11 @@ pass:[--] http://openal-soft.org/openal-extensions/SOFT_device_clock.txt[ALC_SOF
 '_doppler velocity_': float +
 '_speed of sound_': float +
 '_distance model_': <<distancemodel, distancemodel>> +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_gain_clamp_ex[AL_SOFT_gain_clamp_ex] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_gain_clamp_ex.txt[AL_SOFT_gain_clamp_ex] extension: +
 '_gain limit_': float (query only) +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_deferred_updates[AL_SOFT_deferred_updates] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_deferred_updates.txt[AL_SOFT_deferred_updates] extension: +
 '_deferred updates_': boolean (query only) +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_resampler[AL_SOFT_source_resampler] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_source_resampler.txt[AL_SOFT_source_resampler] extension: +
 '_default resampler_': <<resampler, resampler>> (query only) +
 '_resampler names_': {<<resampler, resampler>>} (query only)#
 
@@ -100,21 +100,21 @@ pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_resampler[A
 '_doppler factor_': float +
 pass:[--] https://github.com/openalext/openalext/wiki/AL_EXT_STEREO_ANGLES[AL_EXT_STEREO_ANGLES] extension: +
 '_stereo angles_', float, float +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_EXT_source_distance_model[AL_EXT_source_distance_model] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/EXT_source_distance_model.txt[AL_EXT_source_distance_model] extension: +
 '_distance model_': <<distancemodel, distancemodel>> +
 pass:[--] https://github.com/openalext/openalext/wiki/AL_EXT_SOURCE_RADIUS[AL_EXT_SOURCE_RADIUS] extension: +
 '_radius_': float +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_direct_channels[AL_SOFT_direct_channels] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_direct_channels.txt[AL_SOFT_direct_channels] extension: +
 '_direct channels_': boolean +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_resampler[AL_SOFT_source_resampler] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_source_resampler.txt[AL_SOFT_source_resampler] extension: +
 '_resampler_': <<resampler, resampler>> +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_spatialize[AL_SOFT_source_spatialize] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_source_spatialize.txt[AL_SOFT_source_spatialize] extension: +
 '_spatialize_': <<spatializemode, spatializemode>> +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_length[AL_SOFT_source_length] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_source_length.txt[AL_SOFT_source_length] extension: +
 '_byte length_': integer (query only) +
 '_sample length_': integer (query only)  +
 '_sec length_': float (query only) +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_latency[AL_SOFT_source_latency] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_source_latency.txt[AL_SOFT_source_latency] extension: +
 '_sec offset latency_': double, double (query only) +
 '_sample offset latency_': integer, integer (query only) +
 pass:[--] http://openal-soft.org/openal-extensions/SOFT_device_clock.txt[ALC_SOFT_device_clock] extension: +
@@ -138,14 +138,14 @@ pass:[--] https://github.com/openalext/openalext/wiki/ALC_EXT_EFX[ALC_EXT_EFX] e
 '_bits_': integer (query only) +
 '_channels_': integer (query only) +
 '_size_': integer (query only) +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_block_alignment[AL_SOFT_block_alignment] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_block_alignment.txt[AL_SOFT_block_alignment] extension: +
 '_unpack block alignment_': integer +
 '_pack block alignment_': integer +
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_loop_points[AL_SOFT_loop_points] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_loop_points.txt[AL_SOFT_loop_points] extension: +
 '_loop points_': integer, integer#
 
 ////
-pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_buffer_samples[AL_SOFT_buffer_samples] extension: +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_buffer_samples.txt[AL_SOFT_buffer_samples] extension: +
 '_internal format_': <<internalformat, internalformat>> (query only) +
 '_byte length_': integer (query only) +
 '_sample length_': integer (query only) +

@@ -851,6 +851,9 @@ p.tableblock.header { color: #6d6e71; }
 <p><a href="http://kcat.strangesoft.net/misc-downloads/Effects%20Extension%20Guide.pdf">Effects Extension Guide (PDF)</a></p>
 </li>
 <li>
+<p><a href="http://openal-soft.org/openal-extensions">OpenAL Soft extensions documents</a></p>
+</li>
+<li>
 <p><a href="https://github.com/openalext/openalext/wiki">OpenAL extensions Wiki</a></p>
 </li>
 </ul>
@@ -1063,7 +1066,8 @@ Also available as <em>device:name( )</em> method.</span></p>
 <p><strong>device_pause</strong>(<em>device</em>)<br>
 <strong>device_resume</strong>(<em>device</em>)<br>
 <span class="small">Also available as <em>device:pause/resume( )</em> methods.<br>
-Rfr: alcDevicePauseSOFT, alcDeviceResumeSOFT (<a href="https://github.com/openalext/openalext/wiki/ALC_SOFT_pause_device">ALC_SOFT_pause_device</a> extension).</span></p>
+Rfr: alcDevicePauseSOFT, alcDeviceResumeSOFT (
+<a href="http://openal-soft.org/openal-extensions/SOFT_pause_device.txt">ALC_SOFT_pause_device</a> extension).</span></p>
 </li>
 </ul>
 </div>
@@ -1073,7 +1077,7 @@ Rfr: alcDevicePauseSOFT, alcDeviceResumeSOFT (<a href="https://github.com/openal
 <p>{<em>specifier</em>} = <strong>hrtf_specifiers</strong>(<em>device</em>)<br>
 <span class="small">Returns the list of of HRTF specifiers (strings) for <em>device</em>.<br>
 Note that the <em>hrtf_id</em> for the <em>i-th</em> specifier in the list is <em>i - 1</em> (0-based index).<br>
-Rfr: ALC_HRTF_SPECIFIER_SOFT (<a href="https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF">ALC_SOFT_HRTF</a> extension).</span></p>
+Rfr: ALC_HRTF_SPECIFIER_SOFT (<a href="http://openal-soft.org/openal-extensions/SOFT_HRTF.txt">ALC_SOFT_HRTF</a> extension).</span></p>
 </li>
 </ul>
 </div>
@@ -1124,7 +1128,8 @@ Rfr: alcCaptureSamples.</span></p>
 <div class="sect3">
 <h4 id="_loopback_device">Loopback device</h4>
 <div class="paragraph">
-<p>Loopback devices require the <a href="https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback">ALC_SOFT_loopback</a> extension.</p>
+<p>Loopback devices require the
+<a href="http://openal-soft.org/openal-extensions/SOFT_loopback.txt">ALC_SOFT_loopback</a> extension.</p>
 </div>
 <div id="loopback_open_device" class="ulist">
 <ul>
@@ -1203,7 +1208,7 @@ Rfr: alcDestroyContext.</span></p>
 <li>
 <p><em>boolean</em> = <strong>reset_context</strong>(<em>context</em>, [<a href="#attributes"><em>attributes</em></a>])<br>
 <span class="small">Also available as <em>context:reset( )</em> method.<br>
-Rfr: alcResetDeviceSOFT (<a href="https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF">ALC_SOFT_HRTF</a> extension)</span></p>
+Rfr: alcResetDeviceSOFT (<a href="http://openal-soft.org/openal-extensions/SOFT_HRTF.txt">ALC_SOFT_HRTF</a> extension)</span></p>
 </li>
 </ul>
 </div>
@@ -1271,7 +1276,7 @@ Rfr: alGetInteger, alGetFloat, alDopplerFactor, alDopplerVelocity, etc..</span><
 <p><strong>defer_updates</strong>(<em>context</em>)<br>
 <strong>process_updates</strong>(<em>context</em>)<br>
 <span class="small">Also available as <em>context:defer_updates/process_updates( )</em> methods.<br>
-Rfr: alDeferUpdatesSOFT, alProcessUpdatesSOFT (<a href="https://github.com/openalext/openalext/wiki/AL_SOFT_deferred_updates">AL_SOFT_deferred_updates</a> extension)</span></p>
+Rfr: alDeferUpdatesSOFT, alProcessUpdatesSOFT (<a href="http://openal-soft.org/openal-extensions/SOFT_deferred_updates.txt">AL_SOFT_deferred_updates</a> extension)</span></p>
 </li>
 </ul>
 </div>
@@ -1528,10 +1533,10 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 <em>stereo_sources</em>: integer,<br>
 -- <a href="https://github.com/openalext/openalext/wiki/ALC_EXT_EFX">ALC_EXT_EFX</a> extension:<br>
 <em>max_auxiliary_sends</em>: integer,<br>
--- <a href="https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF">ALC_SOFT_HRTF</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_HRTF.txt">ALC_SOFT_HRTF</a> extension:<br>
 <em>hrtf</em>: boolean,<br>
 <em>hrtf_id</em>: integer (see <a href="#hrtf_specifiers">hrtf_specifiers</a>),<br>
--- <a href="https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback">ALC_SOFT_loopback</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_loopback.txt">ALC_SOFT_loopback</a> extension:<br>
 <em>format_type</em>: <a href="#type">type</a>,<br>
 <em>format_channels</em>: <a href="#channels">channels</a>,<br>
 } (Rfr: ALC_ALL_ATTRIBUTES)</span></p>
@@ -1546,12 +1551,12 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 '<em>stereo sources</em>': integer<br>
 -- <a href="https://github.com/openalext/openalext/wiki/ALC_EXT_EFX">ALC_EXT_EFX</a> extension:<br>
 '<em>max auxiliary sends</em>': integer<br>
--- <a href="https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF">ALC_SOFT_HRTF</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_HRTF.txt">ALC_SOFT_HRTF</a> extension:<br>
 '<em>hrtf</em>': boolean<br>
 '<em>hrtf id</em>': integer  (see <a href="#hrtf_specifiers">hrtf_specifiers</a>)<br>
 '<em>hrtf specifier</em>': string or <em>nil</em><br>
 '<em>hrtf status</em>': <a href="#hrtfstatus">hrtfstatus</a><br>
--- <a href="https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback">ALC_SOFT_loopback</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_loopback.txt">ALC_SOFT_loopback</a> extension:<br>
 '<em>format type</em>': <a href="#type">type</a><br>
 '<em>format channels</em>': <a href="#channels">channels</a><br>
 -- <a href="http://openal-soft.org/openal-extensions/SOFT_device_clock.txt">ALC_SOFT_device_clock</a> extension:<br>
@@ -1566,11 +1571,11 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 '<em>doppler velocity</em>': float<br>
 '<em>speed of sound</em>': float<br>
 '<em>distance model</em>': <a href="#distancemodel">distancemodel</a><br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_gain_clamp_ex">AL_SOFT_gain_clamp_ex</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_gain_clamp_ex.txt">AL_SOFT_gain_clamp_ex</a> extension:<br>
 '<em>gain limit</em>': float (query only)<br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_deferred_updates">AL_SOFT_deferred_updates</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_deferred_updates.txt">AL_SOFT_deferred_updates</a> extension:<br>
 '<em>deferred updates</em>': boolean (query only)<br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_source_resampler">AL_SOFT_source_resampler</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_source_resampler.txt">AL_SOFT_source_resampler</a> extension:<br>
 '<em>default resampler</em>': <a href="#resampler">resampler</a> (query only)<br>
 '<em>resampler names</em>': {<a href="#resampler">resampler</a>} (query only)</span></p>
 </div>
@@ -1613,21 +1618,21 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 '<em>doppler factor</em>': float<br>
 -- <a href="https://github.com/openalext/openalext/wiki/AL_EXT_STEREO_ANGLES">AL_EXT_STEREO_ANGLES</a> extension:<br>
 '<em>stereo angles</em>', float, float<br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_EXT_source_distance_model">AL_EXT_source_distance_model</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/EXT_source_distance_model.txt">AL_EXT_source_distance_model</a> extension:<br>
 '<em>distance model</em>': <a href="#distancemodel">distancemodel</a><br>
 -- <a href="https://github.com/openalext/openalext/wiki/AL_EXT_SOURCE_RADIUS">AL_EXT_SOURCE_RADIUS</a> extension:<br>
 '<em>radius</em>': float<br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_direct_channels">AL_SOFT_direct_channels</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_direct_channels.txt">AL_SOFT_direct_channels</a> extension:<br>
 '<em>direct channels</em>': boolean<br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_source_resampler">AL_SOFT_source_resampler</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_source_resampler.txt">AL_SOFT_source_resampler</a> extension:<br>
 '<em>resampler</em>': <a href="#resampler">resampler</a><br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_source_spatialize">AL_SOFT_source_spatialize</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_source_spatialize.txt">AL_SOFT_source_spatialize</a> extension:<br>
 '<em>spatialize</em>': <a href="#spatializemode">spatializemode</a><br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_source_length">AL_SOFT_source_length</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_source_length.txt">AL_SOFT_source_length</a> extension:<br>
 '<em>byte length</em>': integer (query only)<br>
 '<em>sample length</em>': integer (query only) <br>
 '<em>sec length</em>': float (query only)<br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_source_latency">AL_SOFT_source_latency</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_source_latency.txt">AL_SOFT_source_latency</a> extension:<br>
 '<em>sec offset latency</em>': double, double (query only)<br>
 '<em>sample offset latency</em>': integer, integer (query only)<br>
 -- <a href="http://openal-soft.org/openal-extensions/SOFT_device_clock.txt">ALC_SOFT_device_clock</a> extension:<br>
@@ -1650,10 +1655,10 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 '<em>bits</em>': integer (query only)<br>
 '<em>channels</em>': integer (query only)<br>
 '<em>size</em>': integer (query only)<br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_block_alignment">AL_SOFT_block_alignment</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_block_alignment.txt">AL_SOFT_block_alignment</a> extension:<br>
 '<em>unpack block alignment</em>': integer<br>
 '<em>pack block alignment</em>': integer<br>
--- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_loop_points">AL_SOFT_loop_points</a> extension:<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_loop_points.txt">AL_SOFT_loop_points</a> extension:<br>
 '<em>loop points</em>': integer, integer</span></p>
 </div>
 <hr>

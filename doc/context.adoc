@@ -27,7 +27,7 @@ Rfr: alcDestroyContext.#
 [[reset_context]]
 * _boolean_ = *reset_context*(_context_, [<<attributes, _attributes_>>]) +
 [small]#Also available as _context:reset( )_ method. +
-Rfr: alcResetDeviceSOFT (https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF[ALC_SOFT_HRTF] extension)#
+Rfr: alcResetDeviceSOFT (http://openal-soft.org/openal-extensions/SOFT_HRTF.txt[ALC_SOFT_HRTF] extension)#
 
 ////
 [[current_context]]
@@ -78,5 +78,5 @@ Rfr: alGetInteger, alGetFloat, alDopplerFactor, alDopplerVelocity, etc..#
 * *defer_updates*(_context_) +
 *process_updates*(_context_) +
 [small]#Also available as _context:defer_updates/process_updates( )_ methods. +
-Rfr: alDeferUpdatesSOFT, alProcessUpdatesSOFT (https://github.com/openalext/openalext/wiki/AL_SOFT_deferred_updates[AL_SOFT_deferred_updates] extension)#
+Rfr: alDeferUpdatesSOFT, alProcessUpdatesSOFT (http://openal-soft.org/openal-extensions/SOFT_deferred_updates.txt[AL_SOFT_deferred_updates] extension)#
 

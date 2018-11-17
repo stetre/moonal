@@ -47,13 +47,14 @@ Also available as _device:name( )_ method.#
 * *device_pause*(_device_) +
 *device_resume*(_device_) +
 [small]#Also available as _device:pause/resume( )_ methods. +
-Rfr: alcDevicePauseSOFT, alcDeviceResumeSOFT (https://github.com/openalext/openalext/wiki/ALC_SOFT_pause_device[ALC_SOFT_pause_device] extension).#
+Rfr: alcDevicePauseSOFT, alcDeviceResumeSOFT (
+http://openal-soft.org/openal-extensions/SOFT_pause_device.txt[ALC_SOFT_pause_device] extension).#
 
 [[hrtf_specifiers]]
 * {_specifier_} = *hrtf_specifiers*(_device_) +
 [small]#Returns the list of of HRTF specifiers (strings) for _device_. +
 Note that the _hrtf_id_ for the _i-th_ specifier in the list is _i - 1_ (0-based index). +
-Rfr: ALC_HRTF_SPECIFIER_SOFT (https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF[ALC_SOFT_HRTF] extension).#
+Rfr: ALC_HRTF_SPECIFIER_SOFT (http://openal-soft.org/openal-extensions/SOFT_HRTF.txt[ALC_SOFT_HRTF] extension).#
 
 ==== Capture device
 
@@ -85,7 +86,8 @@ Rfr: alcCaptureSamples.#
 
 ==== Loopback device
 
-Loopback devices require the https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback[ALC_SOFT_loopback] extension.
+Loopback devices require the 
+http://openal-soft.org/openal-extensions/SOFT_loopback.txt[ALC_SOFT_loopback] extension.
 
 [[loopback_open_device]]
 * _device_ = *loopback_open_device*([_name_], _maxframes_, _maxframesize_) +

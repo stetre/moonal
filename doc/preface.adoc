@@ -21,6 +21,7 @@ The following OpenAL documentation will also be referenced in this manual:
 * https://www.openal.org/documentation/openal-1.1-specification.pdf[OpenAL 1.1 Specification (PDF)]
 * https://openal.org/documentation/OpenAL_Programmers_Guide.pdf[OpenAL Programmer's Guide (PDF)]
 * http://kcat.strangesoft.net/misc-downloads/Effects%20Extension%20Guide.pdf[Effects Extension Guide (PDF)]
+* http://openal-soft.org/openal-extensions[OpenAL Soft extensions documents]
 * https://github.com/openalext/openalext/wiki[OpenAL extensions Wiki]
 
 === Getting and installing
