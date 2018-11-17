@@ -564,6 +564,9 @@ void moonal_open_enums(lua_State *L)
     ADD_ALC(HRTF_ID_SOFT, "hrtf id");
     ADD_ALC(FORMAT_TYPE_SOFT, "format type");
     ADD_ALC(FORMAT_CHANNELS_SOFT, "format channels");
+    ADD_ALC(DEVICE_CLOCK_SOFT, "device clock");
+    ADD_ALC(DEVICE_LATENCY_SOFT, "device latency");
+    ADD_ALC(DEVICE_CLOCK_LATENCY_SOFT, "clock latency");
 
     domain = DOMAIN_AL_PARAM;
     ADD_AL(GAIN, "gain");
@@ -605,6 +608,8 @@ void moonal_open_enums(lua_State *L)
     ADD_AL(SAMPLE_LENGTH_SOFT, "sample length");
     ADD_AL(SEC_OFFSET_LATENCY_SOFT, "sec offset latency");
     ADD_AL(SAMPLE_OFFSET_LATENCY_SOFT, "sample offset latency");
+    ADD_AL(SAMPLE_OFFSET_CLOCK_SOFT, "sample offset clock");
+    ADD_AL(SEC_OFFSET_CLOCK_SOFT, "sec offset clock");
     ADD_AL(STEREO_ANGLES, "stereo angles");
     ADD_AL(SOURCE_TYPE, "type");
     ADD_AL(SOURCE_STATE, "state");

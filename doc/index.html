@@ -1553,7 +1553,11 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 '<em>hrtf status</em>': <a href="#hrtfstatus">hrtfstatus</a><br>
 -- <a href="https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback">ALC_SOFT_loopback</a> extension:<br>
 '<em>format type</em>': <a href="#type">type</a><br>
-'<em>format channels</em>': <a href="#channels">channels</a></span></p>
+'<em>format channels</em>': <a href="#channels">channels</a><br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_device_clock.txt">ALC_SOFT_device_clock</a> extension:<br>
+'<em>device clock</em>': integer<br>
+'<em>device latency</em>': integer<br>
+'<em>device clock latency</em>': integer, integer</span></p>
 </div>
 <hr>
 <div id="context_param" class="paragraph">
@@ -1626,6 +1630,9 @@ Rfr: alGetAuxiliaryEffectSlot, alAuxiliaryEffectSlot.</span></p>
 -- <a href="https://github.com/openalext/openalext/wiki/AL_SOFT_source_latency">AL_SOFT_source_latency</a> extension:<br>
 '<em>sec offset latency</em>': double, double (query only)<br>
 '<em>sample offset latency</em>': integer, integer (query only)<br>
+-- <a href="http://openal-soft.org/openal-extensions/SOFT_device_clock.txt">ALC_SOFT_device_clock</a> extension:<br>
+'<em>sample offset clock</em>': integer, integer (query only)<br>
+'<em>sec offset clock</em>': double, double (query only)<br>
 -- <a href="https://github.com/openalext/openalext/wiki/ALC_EXT_EFX">ALC_EXT_EFX</a> extension:<br>
 '<em>direct filter</em>': <a href="#directfilter">directfilter</a><br>
 '<em>auxiliary send filter</em>': <a href="#auxslot">auxslot</a>, integer, <a href="#filter">filter</a><br>

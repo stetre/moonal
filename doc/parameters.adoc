@@ -37,7 +37,11 @@ pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_HRTF[ALC_SOFT_HRT
 '_hrtf status_': <<hrtfstatus, hrtfstatus>> +
 pass:[--] https://github.com/openalext/openalext/wiki/ALC_SOFT_loopback[ALC_SOFT_loopback] extension: +
 '_format type_': <<type, type>> +
-'_format channels_': <<channels, channels>>#
+'_format channels_': <<channels, channels>> +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_device_clock.txt[ALC_SOFT_device_clock] extension: +
+'_device clock_': integer +
+'_device latency_': integer +
+'_device clock latency_': integer, integer#
 
 '''
 
@@ -113,6 +117,9 @@ pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_length[AL_S
 pass:[--] https://github.com/openalext/openalext/wiki/AL_SOFT_source_latency[AL_SOFT_source_latency] extension: +
 '_sec offset latency_': double, double (query only) +
 '_sample offset latency_': integer, integer (query only) +
+pass:[--] http://openal-soft.org/openal-extensions/SOFT_device_clock.txt[ALC_SOFT_device_clock] extension: +
+'_sample offset clock_': integer, integer (query only) +
+'_sec offset clock_': double, double (query only) +
 pass:[--] https://github.com/openalext/openalext/wiki/ALC_EXT_EFX[ALC_EXT_EFX] extension: +
 '_direct filter_': <<directfilter, directfilter>> +
 '_auxiliary send filter_': <<auxslot, auxslot>>, integer, <<filter, filter>> +

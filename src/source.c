@@ -454,8 +454,10 @@ static int GetSource(lua_State *L)
         case AL_SAMPLE_LENGTH_SOFT:
                             return GetInteger(L, source, param);
         case AL_SEC_OFFSET_LATENCY_SOFT:
+        case AL_SEC_OFFSET_CLOCK_SOFT:
                             return GetDouble2(L, source, param);
         case AL_SAMPLE_OFFSET_LATENCY_SOFT:
+        case AL_SAMPLE_OFFSET_CLOCK_SOFT:
                             return GetI64_2(L, source, param);
         case AL_ORIENTATION: return GetOrientation(L, source);
         case AL_STEREO_ANGLES: return GetStereoAngles(L, source);
@@ -525,6 +527,8 @@ static int SetSource(lua_State *L)
         case AL_SEC_LENGTH_SOFT:
         case AL_SEC_OFFSET_LATENCY_SOFT:
         case AL_SAMPLE_OFFSET_LATENCY_SOFT:
+        case AL_SAMPLE_OFFSET_CLOCK_SOFT:
+        case AL_SEC_OFFSET_CLOCK_SOFT:
         case AL_SOURCE_TYPE:
         case AL_SOURCE_STATE:
                             return errreadonlyparam(L, 2);

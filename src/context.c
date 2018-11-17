@@ -356,6 +356,25 @@ static int AlcGetInteger(lua_State *L, device_t device, ALCenum param)
     return 1;
     }
 
+static int AlcGetInteger64(lua_State *L, device_t device, ALCenum param, ud_t *ud)
+    {
+    ALCint64SOFT val;
+    CheckDevicePfn(L, ud, GetInteger64vSOFT);
+    ud->ddt->GetInteger64vSOFT(device, param, 1, &val);
+    lua_pushinteger(L, val);
+    return 1;
+    }
+
+static int AlcGetInteger64_2(lua_State *L, device_t device, ALCenum param, ud_t *ud)
+    {
+    ALCint64SOFT val[2];
+    CheckDevicePfn(L, ud, GetInteger64vSOFT);
+    ud->ddt->GetInteger64vSOFT(device, param, 2, val);
+    lua_pushinteger(L, val[0]);
+    lua_pushinteger(L, val[1]);
+    return 2;
+    }
+
 static int AlcGetString(lua_State *L, device_t device, ALCenum param)
     {
     const ALchar *val = alc.GetString(device, param);
@@ -363,7 +382,6 @@ static int AlcGetString(lua_State *L, device_t device, ALCenum param)
     lua_pushstring(L, val);
     return 1;
     }
-
 
 #define GET_ENUM_FUNC(FuncName, param, enumtype)        \
 static int FuncName(lua_State *L, device_t device)      \
@@ -404,6 +422,9 @@ static int GetAttribute(lua_State *L)
         case ALC_HRTF_STATUS_SOFT: res = AlcGetHrtfStatus(L, device); break;
         case ALC_FORMAT_TYPE_SOFT: res = AlcGetFormatType(L, device); break;
         case ALC_FORMAT_CHANNELS_SOFT:  res = AlcGetFormatChannels(L, device); break;
+        case ALC_DEVICE_CLOCK_SOFT:
+        case ALC_DEVICE_LATENCY_SOFT:   res = AlcGetInteger64(L, device, param, ud); break;
+        case ALC_DEVICE_CLOCK_LATENCY_SOFT: res = AlcGetInteger64_2(L, device, param, ud); break;
         default: 
             make_context_current(L, old_context);
             return erralcparam(L, 2);

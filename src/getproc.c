@@ -229,6 +229,10 @@ device_dt_t* getproc_device(lua_State *L, device_t device)
         GET(GetStringiSOFT);
         GET(ResetDeviceSOFT);
         }
+    IF("ALC_SOFT_device_clock")
+        {
+        GET(GetInteger64vSOFT);
+        }
 #undef GET
 #define GET(fn) do {                                            \
     FP(dt->fn) = AlGetProcAddress("al"#fn);                     \
